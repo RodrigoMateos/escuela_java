@@ -13,7 +13,7 @@ public class Coche { // hereda de Object
     private boolean arrancado;
     private TipoColor color;
 
-
+    
     public Coche(String marca, TipoCarburante carburante, String color) {
         this.numRuedas = 4;
         this.marca = marca;
@@ -37,29 +37,7 @@ public class Coche { // hereda de Object
     public byte getNumRuedas() {
         return numRuedas;
     }
-    
-    
-    public void echarCarburante(double cantidad) {
-        if (cantidad > 0)
-            this.nivDeposito += cantidad;
-        
-        if (nivDeposito > CAPACIDAD_DEPOSITO)
-            nivDeposito = CAPACIDAD_DEPOSITO;
-    }
-    
-    public void acelerar() {
-        if (arrancado)  nivDeposito -= 0.1;
-    }
-    
-    public void vaciarDeposito() {
-        // float nivelDeposito = 2;
-        this.nivDeposito = 3;
-        System.out.println("Deposito vaciado de " + this.toString()
-                /*+ "\n   Nivel: " + nivelDeposito*/ );  
-    }
-    public String toString() {
-        return "Coche " + marca +" color "+this.color.toString()+" nivel " + nivDeposito;
-    }
+ 
     public void mostrar() {
         System.out.println(this.toString()); 
     }
@@ -109,7 +87,37 @@ public class Coche { // hereda de Object
         this.carburante = carburante;
     }
     
+    public void echarCarburante(double cantidad) {
+        if (cantidad > 0)
+            this.nivDeposito += cantidad;
+        
+        if (nivDeposito > CAPACIDAD_DEPOSITO)
+            nivDeposito = CAPACIDAD_DEPOSITO;
+    }
     
+    public void acelerar() {
+        if (arrancado)  {
+            nivDeposito -= 0.1;
+            explosionCilindro();
+        }
+    }
+    
+    public void vaciarDeposito() {
+        // float nivelDeposito = 2;
+        this.nivDeposito = 3;
+        System.out.println("Deposito vaciado de " + this.toString()
+                /*+ "\n   Nivel: " + nivelDeposito*/ );  
+    }
+    
+    @Override
+    public String toString() {
+        return "Coche " + marca +" color "+this.color.toString()+" nivel " + nivDeposito;
+    }   
+
+    
+    protected void explosionCilindro(){
+        System.out.println("Motor funcionando");
+    }
 
     private TipoColor dameColor(String color) {
         if(color.equalsIgnoreCase("rojo"))
@@ -127,6 +135,7 @@ public class Coche { // hereda de Object
         else
             return null;
         
-    }
+    }   
     
+        
 }

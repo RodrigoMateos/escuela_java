@@ -5,6 +5,8 @@
  */
 package pkg01_ejemplocoche;
 
+import pruebas.ProbandoString;
+
 /**
  *
  * @author alumno
@@ -14,7 +16,15 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    
+    //MAIN DE CADENAS 
+    public static void main (String[] args){
+        ProbandoString p = new ProbandoString();
+        p.probarCadenas();
+    }
+
+    //MAIN DE COCHES
+    public static void mainCoches(String[] args) {
         
         System.out.println("Empezando POO");
         Coche miCoche = new Coche("Kia", TipoCarburante.DIESEL, TipoColor.AZUL); // La instanciacion se hace con new
@@ -48,5 +58,23 @@ public class Main {
             miCoche.acelerar();
         
         miCoche.mostrar();
+        
+        CocheRally cr = new CocheRally("TOYOTA", TipoCarburante.HIBRIDO, TipoColor.AZUL, 5.2f);
+        cr.echarCarburante(40);
+        cr.acelerar();
+        cr.acelerar();
+        cr.acelerar();
+        cr.derrapar();
+        cr.mostrar();;
+        
+        Coche crn = cr;
+        crn.acelerar();
+        crn.acelerar();
+        crn.acelerar();
+        crn.mostrar();
+        
+        CocheRally cRally = (CocheRally) crn;
+        System.out.println("El rozamiento es: "+cr.getRozamiento());
+
     }    
 }
