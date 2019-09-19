@@ -1,21 +1,33 @@
-package pkg01_ejemplocoche;
+package poo;
 
-public class Coche { // hereda de Object
+public class Coche extends Vehiculo implements Rodable{ // hereda de Object
     
-    public static final int CAPACIDAD_DEPOSITO = 60;
+    public int capacidadDeposito = 60;
     
 
     
-    private final byte numRuedas;   // Valor constante por el final
+    private final int numRuedas;   // Valor constante por el final
     private String marca;
     private TipoCarburante carburante;
     private double nivDeposito;
-    private boolean arrancado;
     private TipoColor color;
 
+    public Coche(String marca){
+        setRuedas(4);
+        numRuedas=getRuedas();
+        setCapacidad(60);
+        capacidadDeposito=getCapacidad();
+        this.marca=marca;
+        this.color=TipoColor.BLANCO;
+        this.carburante=TipoCarburante.GASOLINA;
+        
+    }
     
     public Coche(String marca, TipoCarburante carburante, String color) {
-        this.numRuedas = 4;
+        setRuedas(4);
+        numRuedas=getRuedas();
+        setCapacidad(60);
+        capacidadDeposito=getCapacidad();
         this.marca = marca;
         this.carburante=carburante;
 //        this.color=dameColor(color);
@@ -24,7 +36,10 @@ public class Coche { // hereda de Object
     }
     
     public Coche(String marca, TipoCarburante carburante, TipoColor color) {
-        this.numRuedas = 4;
+        setRuedas(4);
+        numRuedas=getRuedas();        
+        setCapacidad(60);
+        capacidadDeposito=getCapacidad();
         this.marca = marca;
         this.carburante=carburante;
         this.color=color;
@@ -34,10 +49,6 @@ public class Coche { // hereda de Object
         return nivDeposito;
     }
 
-    public byte getNumRuedas() {
-        return numRuedas;
-    }
- 
     public void mostrar() {
         System.out.println(this.toString()); 
     }
@@ -46,16 +57,8 @@ public class Coche { // hereda de Object
         return marca;
     }
 
-    public boolean isArrancado() {
-        return arrancado;
-    }
-
     public double getNivDeposito() {
         return nivDeposito;
-    }
-
-    public void setArrancado(boolean arrancado) {
-        this.arrancado = arrancado;
     }
     
     public String getMarca (String marca){
@@ -86,17 +89,26 @@ public class Coche { // hereda de Object
     public void setCarburante(TipoCarburante carburante) {
         this.carburante = carburante;
     }
+
+    public int getCapacidadDeposito() {
+        return capacidadDeposito;
+    }
+
+    public void setCapacidadDeposito(int capacidadDeposito) {
+        this.capacidadDeposito = capacidadDeposito;
+    }
     
     public void echarCarburante(double cantidad) {
         if (cantidad > 0)
             this.nivDeposito += cantidad;
         
-        if (nivDeposito > CAPACIDAD_DEPOSITO)
-            nivDeposito = CAPACIDAD_DEPOSITO;
+        if (nivDeposito > getCapacidadDeposito())
+            nivDeposito = getCapacidadDeposito();
+        System.out.println(this.nivDeposito);
     }
     
     public void acelerar() {
-        if (arrancado)  {
+        if (isArrancado())  {
             nivDeposito -= 0.1;
             explosionCilindro();
         }
@@ -136,6 +148,33 @@ public class Coche { // hereda de Object
             return null;
         
     }   
+
+    @Override
+    public void abrirPuertas() {
+        System.out.println("Abriendo puertas del coche");
+    }
+
+    @Override
+    public void dameRuedas() {
+        setRuedas(4);
+        System.out.println("Todos los coches tienen "+getRuedas()+ " ruedas.");
+    }
+
+    @Override
+    public void arrancar() {
+        setArrancado(true);
+    }
+
+    @Override
+    public int getNumRuedas() {
+        return getRuedas();
+    }
+
+    @Override
+    public void moverse() {
+        if(getNumRuedas()>0)
+            System.out.println("El Coche es un vehiculo rodable");
+    }
     
         
 }

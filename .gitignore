@@ -22,3 +22,11 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 *IGNORAR.txt
+/01_EjemploJava/nbproject/private/
+/01_EjemploJava/build/
+/01_EjemploJava/dist/
+/01_Ejemplo_JAVA/nbproject/private/
+/01_EjemploJAVA/nbproject/private/
+/01_EjemploCoche/nbproject/private/
+/01_EjemploCoche/build/
+/01_EjemploCoche/dist/

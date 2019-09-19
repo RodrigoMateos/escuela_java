@@ -3,19 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejemplojava;
+package poo;
 
 /**
  *
  * @author alumno
  */
-public class Main {
+public interface Rodable {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+    int getNumRuedas();
+    void moverse();
     
 }

@@ -1,6 +1,5 @@
-package pkg01_ejemplocoche;
+package poo;
 
-import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
 
 /**
  *
@@ -9,6 +8,13 @@ import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
 public class CocheRally extends Coche{
     
     private float rozamiento;
+    
+    public CocheRally(String marca){
+        super(marca);
+        setCapacidad(100);
+        capacidadDeposito=getCapacidad();
+        this.rozamiento=2.5f;      
+    }
     
     public CocheRally(String marca, TipoCarburante carburante, TipoColor color, float rozamiento){
         super(marca,carburante,color);
@@ -47,4 +53,8 @@ public class CocheRally extends Coche{
 
     }
     
+    @Override
+    public void abrirPuertas() {
+        System.out.println("Abriendo puertas del coche de Rally");
+    }    
 }

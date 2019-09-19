@@ -5,6 +5,10 @@
  */
 package pkg01_ejemplocoche;
 
+import poo.TipoColor;
+import poo.Coche;
+import poo.TipoCarburante;
+import poo.CocheRally;
 import pruebas.ProbandoString;
 
 /**
@@ -18,13 +22,13 @@ public class Main {
      */
     
     //MAIN DE CADENAS 
-    public static void main (String[] args){
+    public static void mainString (String[] args){
         ProbandoString p = new ProbandoString();
         p.probarCadenas();
     }
 
     //MAIN DE COCHES
-    public static void mainCoches(String[] args) {
+    public static void main(String[] args) {
         
         System.out.println("Empezando POO");
         Coche miCoche = new Coche("Kia", TipoCarburante.DIESEL, TipoColor.AZUL); // La instanciacion se hace con new
@@ -33,13 +37,13 @@ public class Main {
         
         miCoche.echarCarburante(30); // Empezamos con medio deposito
         
-        System.out.println("Todos los coches tienen: " + Coche.CAPACIDAD_DEPOSITO);
+        System.out.println("Todos los coches tienen: " + coche.getCapacidadDeposito());
         System.out.println("Coche creado: " + miCoche.getMarca());
         System.out.println("Nivel deposito: " + miCoche.getNivelDep() + " litros");
         System.out.println("Color: "+miCoche.getColor());
         
         
-        System.out.println("Todos los coches tienen: " + Coche.CAPACIDAD_DEPOSITO);
+        System.out.println("Todos los coches tienen: " + coche.getCapacidadDeposito());
         System.out.println("Coche creado: " + coche.getMarca());
         System.out.println("Carburante: "+coche.getCarburante());
         System.out.println("Color: "+coche.getColor());
