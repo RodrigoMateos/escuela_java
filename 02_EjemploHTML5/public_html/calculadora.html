@@ -14,22 +14,22 @@ and open the template in the editor.
         <div>TODO write content</div>
         
         <input id="miCaja" name="miCaja"/><br/>
-        <input id="e1" value="1" onclick="pulsar(1)"/>
-        <input id="e2" value="2" onclick="pulsar(2)"/>
-        <input id="e3" value="3" onclick="pulsar(3)"/><br/>
-        <input id="e4" value="4" onclick="pulsar(4)"/>
-        <input id="e5" value="5" onclick="pulsar(5)"/>
-        <input id="e6" value="6" onclick="pulsar(6)"/><br/>
-        <input id="e7" value="7" onclick="pulsar(7)"/>
-        <input id="e8" value="8" onclick="pulsar(8)"/>
-        <input id="e9" value="9" onclick="pulsar(9)"/><br/>
-        <input id="e0" value="0" onclick="pulsar(0)"/><br/>
-        <input id="suma" value="+" onclick="operacion('+')"/>
-        <input id="resta" value="-" onclick="operacion('-')"/>
-        <input id="multi" value="*" onclick="operacion('*')"/>
-        <input id="divi" value="/" onclick="operacion('/')"/><br/>
-        <input id="res" value="=" onclick="resultado()"/>
-        <input id="limpiar" value="C" onclick="inicializarVariables(1)"/>
+        <input id="e1" type="button" value="1" onclick="pulsar(1)"/>
+        <input id="e2" type="button" value="2" onclick="pulsar(2)"/>
+        <input id="e3" type="button" value="3" onclick="pulsar(3)"/><br/>
+        <input id="e4" type="button" value="4" onclick="pulsar(4)"/>
+        <input id="e5" type="button" value="5" onclick="pulsar(5)"/>
+        <input id="e6" type="button" value="6" onclick="pulsar(6)"/><br/>
+        <input id="e7" type="button" value="7" onclick="pulsar(7)"/>
+        <input id="e8" type="button" value="8" onclick="pulsar(8)"/>
+        <input id="e9" type="button" value="9" onclick="pulsar(9)"/><br/>
+        <input id="e0" type="button" value="0" onclick="pulsar(0)"/><br/>
+        <input id="suma" type="button" value="+" onclick="operacion('+')"/>
+        <input id="resta" type="button" value="-" onclick="operacion('-')"/>
+        <input id="multi" type="button" value="*" onclick="operacion('*')"/>
+        <input id="divi" type="button" value="/" onclick="operacion('/')"/><br/>
+        <input id="res" type="button" value="=" onclick="resultado()"/>
+        <input id="limpiar" type="button" value="C" onclick="inicializarVariables(1)"/>
         
         <script>
             
@@ -45,7 +45,7 @@ and open the template in the editor.
             }
 
             function pulsar(valor){
-
+                
                 if(i==0){
                     num1=(num1*10)+valor;
                     mostrar.value = num1;
