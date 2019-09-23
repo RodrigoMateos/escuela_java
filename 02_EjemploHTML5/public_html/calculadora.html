@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <input id="miCaja" name="miCaja"/><br/>
+        <input id="e1" value="1" onclick="pulsar(1)"/>
+        <input id="e2" value="2" onclick="pulsar(2)"/>
+        <input id="e3" value="3" onclick="pulsar(3)"/><br/>
+        <input id="e4" value="4" onclick="pulsar(4)"/>
+        <input id="e5" value="5" onclick="pulsar(5)"/>
+        <input id="e6" value="6" onclick="pulsar(6)"/><br/>
+        <input id="e7" value="7" onclick="pulsar(7)"/>
+        <input id="e8" value="8" onclick="pulsar(8)"/>
+        <input id="e9" value="9" onclick="pulsar(9)"/><br/>
+        <input id="e0" value="0" onclick="pulsar(0)"/><br/>
+        <input id="suma" value="+" onclick="operacion('+')"/>
+        <input id="resta" value="-" onclick="operacion('-')"/>
+        <input id="multi" value="*" onclick="operacion('*')"/>
+        <input id="divi" value="/" onclick="operacion('/')"/><br/>
+        <input id="res" value="=" onclick="resultado()"/>
+        <input id="limpiar" value="C" onclick="inicializarVariables(1)"/>
+        
+        <script>
+            
+            var i;
+            var num1;
+            var num2;
+            var operador;
+            var res;
+            let mostrar;
+            
+            window.onload = function (){
+                inicializarVariables(1);
+            }
+
+            function pulsar(valor){
+
+                if(i==0){
+                    num1=(num1*10)+valor;
+                    mostrar.value = num1;
+                }else{
+                    num2=(num2*10)+valor;   
+                    mostrar.value = num2;
+                }
+            }
+            
+            function operacion(ope){
+                i=1;
+                if(num2>0)
+                    resultado();
+                else
+                    operador=ope;
+            }
+            
+            function resultado(){
+                if(operador=='+')
+                    res= num1+num2;
+                if(operador=='-')
+                    res= num1-num2;
+                if(operador=='*')
+                    res= num1*num2;
+                if(operador=='/')
+                    res= num1/num2; 
+                               
+                //console.log(`${num1}${operador}${num2}=${res}`);
+                mostrar.value = res;
+                inicializarVariables(false);
+            }
+            
+            function inicializarVariables(condicion){
+                i=0, num2=0;
+                mostrar = document.getElementById("miCaja");
+                if(condicion==1){
+                    num1=0;
+                    mostrar.value = 0;
+                }else
+                    num1=res;
+                
+                res=0;
+            }
+        </script>
+        
+
+    </body>
+</html>

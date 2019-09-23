@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>POO con JS</div>
+        <script>
+            //ESTILO EcmaScript 5 Esto es lo mas parecido a una clase de JAVA
+            var Coche = function(matricula, marca){
+                this.matricula=matricula;
+                this.marca=marca;
+                /* //MEJOR HACER EL METODO CON EL PROTOTIPO
+                this.arrancar = function(){
+                    document.write("<p> Arrancando "+this.marca+"</p>");
+                };
+                */
+            }
+            Coche.prototype.arrancar = function(){
+                document.write("<p> Arrancando "+this.marca+"</p>");
+            };
+            var miCoche = new Coche("1537CKI", "SEAT");
+            document.write("<p>"+miCoche.marca+"</p>");
+            miCoche.arrancar();
+            var coche2 = new Coche("7899LZ", "Peugeot");
+            document.write("<p>"+coche2.marca+"</p>");
+            coche2.arrancar();        
+            
+            var miCocheBueno={
+                "matricula":"9809LBB",
+                "marca":"Porsche",
+                autoconduccion :function(){
+                     document.write("<p>El coche conduce solo</p>");
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>--------</div>
+        <script>
+            function miFuncion(arg1, arg2){
+                document.write("<p>Arg 1 "+arg1+"</p>");
+                document.write("<p>Arg 2 "+arg2+"</p>");
+                document.write("<p>--------</p>");
+                
+                if(arguments.length>2){
+                    document.write("<h2>"+arguments[2]+"</h2>");
+                    if(arguments.length>3){
+                        for(arg in arguments) //args es el indice
+                            document.write("<h3>Arg "+arg+" "+arguments[arg]+"</h3>");
+                        for(arg of arguments)   //args es el elemento
+                            document.write("<h3>Arg 2 "+arg+"</h3>");                    }
+                }
+            }
+            /*
+            miFuncion("Hola mundo con JS", 2000);
+            miFuncion(new Object(), false);
+            miFuncion("Un solo arg");
+            miFuncion("Muchos arg", false, 1000, "prueba", 5654, true,"", null, 3);
+            */
+            var otraFuncion = function(veces){
+                for(var i=0;i<veces;i++)
+                    document.write("<p>Vez: "+i+"</p>");
+            };
+            otraFuncion(3);
+            
+            otraFuncion.prueba="Las funciones en JS son obtejos";
+            document.write("<p>Vez: "+otraFuncion.prueba+"</p>");
+            
+            var otraFuncion = new Function("x","y","return x*y");
+            
+            document.write("<h1>5*4 = "+otraFuncion(5,4)+"</p>")
+            document.write(miFuncion(1,2).toString());
+            
+        </script>
+    </body>
+</html>

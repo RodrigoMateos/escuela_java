@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Puta mierda de JS</div>
+        <script>
+            var totalAnumales=0;
+            class Animal{
+                constructor(patas, nombre, especie){
+                    this.patas=patas;
+                    this.nombre=nombre;
+                    this.especie=especie;
+                    totalAnumales++;
+                }
+                dimeTipo(){
+                    return this.especie+ " es un tipo de "
+                            +((this.patas == 2) ? "Bipedo":
+                            (this.patas == 4) ?"Cuadrupedo" : "multipata");
+                }
+                static numAnimales(){
+                    return totalAnumales;
+                }
+            }
+            var perro = new Animal(4,"Bobby", "Perro");
+            document.write(perro.dimeTipo()+ " y se llama "+perro.nombre);
+            perro.color="Blanco";
+            document.write("Color: "+perro.color);
+            
+            var texto=`<br/>Texto
+                        en
+                        varias lineas ${perro.nombre} esta en el texto`;
+            document.write(texto);
+        </script>
+    </body>
+</html>

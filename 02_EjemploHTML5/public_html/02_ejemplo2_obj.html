@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var valor1 = new Object();
+            var valor2 = {}; //Nomeclatura JSON
+
+            var persona = new Object();
+            persona.dni = "03684265K";
+            persona.nombre = "Pepe";
+            persona.edad = 58;
+            persona.nacimiento = new Date();
+
+            var persona2 = {
+                "dni": "03684265K",
+                "nombre": "pepe",
+                "nacimiento": new Date(),
+                "edad": 56
+            }
+
+            /*
+             window.alert("Info persona: "+persona.nombre+
+             " con DNI:"+persona.dni+
+             " nacio el "+persona.nacimiento+
+             " y tiene "+persona.edad+" años.");
+             */
+            persona2["apellidos"] = "Pepita Pepito";
+/*
+            window.alert("Info persona: " + persona2.nombre +
+                    " con apellidos "+persona2.apellidos+
+                    " con DNI:" + persona2.dni +
+                    " nacio el " + persona2.nacimiento +
+                    " y tiene " + persona2.edad + " años.");
+           */ 
+            var coche= {
+                "marca":"Opel",
+                "modelo":"insignia",
+                "color":"Blanco",
+                "matricula":"1640CRA",
+                "combustible":"gasolina",
+                "consumo":"7.5L"
+                
+            }
+            
+            window.alert("Modelo: "+coche.marca+" "+coche.modelo+
+                    "\n Color: "+coche.color+
+                    "\n Matricula: "+coche.matricula+
+                    "\n Consumo medio: "+coche.consumo+
+                    "\n Tipo de combustible: "+coche.combustible);
+        </script>
+    </body>
+</html>

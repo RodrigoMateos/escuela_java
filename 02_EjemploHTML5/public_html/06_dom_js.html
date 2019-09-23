@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>DOM en Js</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="unDiv">Document Object Model en JS</div>
+        <input type="text" id="miCaja" name="miCaja"/>
+        <input id="elBoton" value="Pulsame" onclick="pulsar()"/>
+        <input id="elSegundoBoton" value="Pulsame otra vez"/>
+        <script>
+            let div1 = document.getElementById("unDiv"); //Tembien podriamos usar el objeto unDiv, ya que se crea en el div
+            //div1.style="background-color: red";
+            div1.setAttribute("style","background-color: blue");
+            
+            let parrafo = document.createElement("p");
+            let textoParr = document.createTextNode("Texto en el parrafo");
+            parrafo.appendChild(textoParr);
+            div1.appendChild(parrafo);
+            
+            function pulsar(){
+                alert("Muy bien campeon!!, sabes hacer un click");
+            }
+    
+            let otroBoton = document.getElementById("elSegundoBoton");
+            //otroBoton.addEventListener("click", pulsar);
+            
+            otroBoton.onclick = function (){
+                let cajaTxt = document.getElementById("micaja");
+                alert("Has metido en la caja de texto lo siguiente: "+cajaTxt.value);
+            };
+            
+        </script>
+    </body>
+</html>
