@@ -43,6 +43,7 @@ public class TestEjercicioHilos {
         pr2.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
         t2 = (new Date().getTime() - tInicial);
         System.out.println("El tiempo de pr2 : " + t2);
+        
 
         pr3.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
         t3 = (new Date().getTime() - tInicial);
