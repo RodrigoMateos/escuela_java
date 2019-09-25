@@ -93,7 +93,7 @@ public class TestEjercicioHilos {
             }
         };
 
-       Long thIni, th1, th2, th3, th4, thTotal;
+      
        hilo1.start();
        hilo2.start();
        hilo3.start();
