@@ -9,6 +9,8 @@ import EjercicioHilos.HiloFicherov2;
 import EjercicioHilos.HiloFicherov3;
 import EjercicioHilos.HiloFicherov4;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -90,10 +92,19 @@ public class TestEjercicioHilos {
             }
         };
 
-        hilo1.start();
-        hilo2.start();
-        hilo3.start();
-        hilo4.start();
+       Long thIni, th1, th2, th3, th4, thTotal;
+       hilo1.start();
+       hilo2.start();
+       hilo3.start();
+       hilo4.start();
 
+       try {
+            hilo1.join();
+            hilo2.join();
+            hilo3.join();
+            hilo4.join();           
+        } catch (InterruptedException ex) {
+            Logger.getLogger(TestEjercicioHilos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
