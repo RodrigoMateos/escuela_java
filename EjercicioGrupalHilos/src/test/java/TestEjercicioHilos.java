@@ -37,6 +37,7 @@ public class TestEjercicioHilos {
        pr2.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
        pr3.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
        pr4.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
+   
        
        Thread hilo1 = new Thread(){
            
@@ -74,5 +75,6 @@ public class TestEjercicioHilos {
        hilo2.start();
        hilo3.start();
        hilo4.start();
+
    }
 }
