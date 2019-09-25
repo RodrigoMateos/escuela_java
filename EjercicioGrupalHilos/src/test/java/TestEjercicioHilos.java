@@ -31,7 +31,7 @@ public class TestEjercicioHilos {
        HiloFicheroEjer pr2 = new HiloFicherov2();
        HiloFicheroEjer pr3 = new HiloFicherov3();
        HiloFicheroEjer pr4 = new HiloFicherov4();
-       Long t1h;
+      
        
        pr1.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
        pr2.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
@@ -51,7 +51,7 @@ public class TestEjercicioHilos {
        Thread hilo2 = new Thread(){
            @Override
            public void run() {
-                pr1.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
+                pr2.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
            }   
            
        };
@@ -59,14 +59,14 @@ public class TestEjercicioHilos {
        Thread hilo3 = new Thread(){
            @Override
            public void run() {
-                pr1.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
+                pr3.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
            }          
        };
 
        Thread hilo4 = new Thread(){
            @Override
            public void run() {
-                pr1.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
+                pr4.leerFicheroEjem("C:\\Users\\alumno\\Desktop\\ESCUELA_JAVA\\escuela_java.git\\01_EjemploCoche\\texto.txt");
 
            }          
        };
