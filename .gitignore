@@ -32,3 +32,6 @@ hs_err_pid*
 /01_EjemploCoche/dist/
 /02_EjemploHTML5/nbproject/private/
 /EjercicioGrupalHilos/target/
+/05_CRUD_JSTL_DAO/nbproject/private/
+/05_CRUS_Modelo_DAO/nbproject/private/
+/05_CRUS_Modelo_DAO/build/
