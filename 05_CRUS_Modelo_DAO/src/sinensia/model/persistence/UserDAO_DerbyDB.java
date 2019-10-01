@@ -1,7 +1,6 @@
 package sinensia.model.persistence;
 
-import com.sun.istack.internal.logging.Logger;
-import com.sun.javafx.scene.control.skin.VirtualFlow;
+
 import java.sql.Statement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -98,8 +97,23 @@ public class UserDAO_DerbyDB implements IUserDAO{
     }
 
     @Override
-    public User modify(User user) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public User update(User user) throws SQLException {
+        try(Connection c = DriverManager.getConnection(URL_DB, USER_DB, PASS_DB)){ //El try cierra la conexion si todo ha ido bien
+            String sqlQueryId = "UPDATE users SET email=?, password=?, name=?, age=? WHERE id=?";
+            PreparedStatement prep = c.prepareCall(sqlQueryId);
+            prep.setString(1, user.getEmail());
+            prep.setString(2, user.getPassword());
+            prep.setString(3, user.getName());
+            prep.setInt(4, user.getAge());
+            prep.setInt(5, user.getId());
+            int num=prep.executeUpdate();
+            
+            if(num==1)
+                //return 
+                return user;
+            else
+                return null;
+        }
     }
 
 }
