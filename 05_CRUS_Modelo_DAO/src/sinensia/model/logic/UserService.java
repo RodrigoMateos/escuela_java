@@ -54,9 +54,10 @@ public class UserService {
         User user = null;
 
         if (validation(id, email, password, name, age)) {
-
+           // int age = Integer.parseInt(strAge);
             user = new User(email, password, name, age);
-            user = daoUser.create(user);
+            user.setId(id);
+            //user = daoUser.create(user);
         }
         return daoUser.update(user);
     }
@@ -67,15 +68,21 @@ public class UserService {
 
     public boolean validation(int id, String email, String password, String name, int age) {
         if (email != null && password != null && name != null && age != 0) {
-            /*if (!strAge.matches("[0-9]{1,3}")) {
+/*            if (!strAge.matches("[0-9]{1,3}")) {
                 throw new IllegalArgumentException("La edad no es valida");
             } else {
                 int age = Integer.parseInt(strAge);*/
-                if (email.length() > 3 && !password.equals("") && !name.equals("") && age > 0)
+                if (email.length() > 3 && !password.equals("") && !name.equals("") && age > 0) {
                     return true;
+                }
 //            }
         }
         return false;
     }
+    
+    public User validate(String email, String password) throws SQLException{
+        return daoUser.validate(email, password);
+    }
+
 
 }

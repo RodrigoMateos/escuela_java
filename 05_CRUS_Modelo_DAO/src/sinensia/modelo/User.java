@@ -1,5 +1,6 @@
 package sinensia.modelo;
 
+import java.io.Serializable;
 import sinensia.model.persistence.IUserDAO;
 import sinensia.model.persistence.UserDAO_DerbyDB;
 
@@ -7,7 +8,7 @@ import sinensia.model.persistence.UserDAO_DerbyDB;
  *
  * @author alumno
  */
-public class User {
+public class User implements Serializable{
     
     private Integer id;
     private String email;
