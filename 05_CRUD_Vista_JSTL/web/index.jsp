@@ -2,7 +2,7 @@
 <%@page import="sinensia.modelo.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html> 
     <head>
         <title>Vista JSTL Operaciones CRUD</title>
         <meta charset="UTF-8">
