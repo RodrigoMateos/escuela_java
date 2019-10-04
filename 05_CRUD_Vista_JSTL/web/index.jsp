@@ -2,7 +2,7 @@
 <%@page import="sinensia.modelo.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html> 
+<html>
     <head>
         <title>Vista JSTL Operaciones CRUD</title>
         <meta charset="UTF-8">
@@ -13,6 +13,8 @@
         <ul>
             <li> <a href="register.jsp">Register</a> </li>
             <li> <a href="users.do">Users list</a> </li>
+            <li> <a href="restClient.html">Rest Client with AJAX</a> </li>
+            <li> <a href="restClient_jq.html">Rest Client with jQuery AJAX</a> </li>
         </ul>
         <form id="formLogin" action="users.do" method="get">
 
