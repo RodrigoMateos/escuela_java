@@ -1,0 +1,9 @@
+<div class="div-marco">
+    <!--Solo se crea si hero tiene allgun valor-->
+    <h1>Nuevo Heroe</h1>
+    <div>
+        <label>Name: </label>
+        <input [(ngModel)]="hero.name" placeholder="Write the name" />
+    </div>
+    <button (click)="addHero()">Create</button>
+</div>
