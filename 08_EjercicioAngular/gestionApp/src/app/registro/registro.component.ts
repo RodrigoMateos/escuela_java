@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserRestService } from '../user-rest.service';
+import { User } from '../model/user';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private userService: UserRestService) { }
+  user: User;
   ngOnInit() {
+    this.user=new User();
+  }
+
+  addUser(){
+    this.userService.addUser(this.user);
+    this.user= new User();
   }
 
 }
