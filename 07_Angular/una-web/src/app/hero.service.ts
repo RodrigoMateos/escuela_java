@@ -9,16 +9,20 @@ import { MessageService } from './message.service';
 export class HeroService {
 
   constructor(private messageService: MessageService) { }
-  hero2:Hero=new Hero();
 
   getHeroes(): Hero[] {
     this.messageService.add("HeroService: capturando heroes");
-    return HEROES;
+    return HEROES.slice();
   }
+
+  getHero(id:number): Hero{
+    let hero = HEROES.find((hero) => {return hero.id === id})
+    return hero;
+  }
+
   addHeroes(heroe:Hero): Hero[]{
     heroe.id=HEROES.length+1;
     HEROES.push(heroe);
-    // this.hero2=new Hero();
     this.messageService.add("{{heroe.name}} creado correctamente");
     return HEROES;
   }

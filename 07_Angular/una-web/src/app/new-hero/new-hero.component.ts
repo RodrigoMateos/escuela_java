@@ -18,7 +18,7 @@ export class NewHeroComponent implements OnInit {
   
   addHero(): void{
     this.heroServices.addHeroes(this.hero);
-    this.hero=new Hero();
+    this.hero=new Hero;
   }
   
 }

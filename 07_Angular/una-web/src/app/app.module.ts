@@ -8,6 +8,8 @@ import { HerosListComponent } from './heros-list/heros-list.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { NewHeroComponent } from './new-hero/new-hero.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { NewHeroComponent } from './new-hero/new-hero.component';
     HerosListComponent,
     HeroDetailComponent,
     MessagesComponent,
-    NewHeroComponent
+    NewHeroComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

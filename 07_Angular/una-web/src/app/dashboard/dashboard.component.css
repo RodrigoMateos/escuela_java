@@ -1,0 +1,10 @@
+.grid {
+    display: inline-block;
+}
+
+.col-25 {
+    width: 10%;
+    text-align: center;
+    border: 1px solid #cccccc;
+    display: inline-block;
+}

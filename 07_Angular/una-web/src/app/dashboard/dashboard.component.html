@@ -1,0 +1,6 @@
+<p>Top heroes:</p>
+<div class="gird">
+    <a *ngFor="let hero of heroes" class="col-25" routerLink="/detail/{{hero.id}}">
+        <div>{{hero.name}}</div>
+    </a>
+</div>
