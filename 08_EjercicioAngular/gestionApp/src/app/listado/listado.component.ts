@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserRestService } from '../user-rest.service';
 import { User } from '../model/user';
 import { Observable } from 'rxjs';
+import { MensajesService } from '../mensajes.service';
 
 @Component({
   selector: 'app-listado',
@@ -12,7 +13,7 @@ export class ListadoComponent implements OnInit {
 
   newUser: User;
   userList: User[];
-  constructor(private userService: UserRestService) { }
+  constructor(private userService: UserRestService, private mensaje: MensajesService) { }
 
   ngOnInit() {
     this.newUser = new User();
@@ -29,11 +30,15 @@ export class ListadoComponent implements OnInit {
     this.userService.updateUser(user).subscribe((nUser)=>{
       this.newUser=nUser;
     });
+    this.mensaje.add("Usuario {{user.name}} eliminado correctamente");
+
  //   this.newUser=new User();
   }
 
   deleteUser(user: User){
     this.userService.deleteUser(user).subscribe();
+    this.mensaje.add("Usuario {{user.name}} eliminado correctamente");
+
 //    this.newUser= new User();
   }
 
