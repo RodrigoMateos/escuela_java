@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class ListadoComponent implements OnInit {
 
   newUser: User;
-  userList: Observable<User[]>;
+  userList: User[];
   constructor(private userService: UserRestService) { }
 
   ngOnInit() {
@@ -20,17 +20,21 @@ export class ListadoComponent implements OnInit {
   }
 
   getUsers(){
-    this.userList= this.userService.getUser();
+    this.userService.getUser().subscribe((objResp) => {
+      this.userList=objResp;
+    });
   }
 
-  updateUser(){
-    this.userService.updateUser(this.newUser).subscribe();
-    this.newUser=new User();
+  updateUser(user: User){
+    this.userService.updateUser(user).subscribe((nUser)=>{
+      this.newUser=nUser;
+    });
+ //   this.newUser=new User();
   }
 
-  deleteUser(){
-    this.userService.deleteUser(this.newUser).subscribe();
-    this.newUser= new User();
+  deleteUser(user: User){
+    this.userService.deleteUser(user).subscribe();
+//    this.newUser= new User();
   }
 
 }

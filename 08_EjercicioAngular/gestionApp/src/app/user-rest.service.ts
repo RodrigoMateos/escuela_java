@@ -31,7 +31,9 @@ export class UserRestService {
 
   deleteUser(user:User): Observable<any>{
     this.mensaje.add("Usuario {{user.name}} eliminado correctamente");
-
-    return this.httpCli.delete(this.urlApiRest,this.options);
+    this.options['body'] = {
+      nUser: user
+    };
+   return this.httpCli.delete(this.urlApiRest,this.options);
   }
 }

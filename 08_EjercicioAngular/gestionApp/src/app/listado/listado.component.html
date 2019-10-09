@@ -1,7 +1,9 @@
 <div class="div-marco">
     <!--Solo se crea si hero tiene allgun valor-->
     <h1>Modificar o Eliminar User</h1>
-    <app-form-usuario [user]="newUser"></app-form-usuario>
-    <button (click)="updateUser()">Modificar</button>
-    <button (click)="removeUser()">Eliminar</button>
+    <div *ngFor="let newUser of userList">
+        <app-form-usuario [user]="this.newUser"></app-form-usuario>
+        <button (click)="updateUser(this.newUser)">Modificar</button>
+        <button (click)="deleteUser(this.newUser)">Eliminar</button>
+    </div>
 </div>
