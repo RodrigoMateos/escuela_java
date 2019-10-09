@@ -10,14 +10,15 @@ import { User } from '../model/user';
 export class RegistroComponent implements OnInit {
 
   constructor(private userService: UserRestService) { }
-  user: User;
+  newUser: User;
+
   ngOnInit() {
-    this.user=new User();
+    this.newUser=new User();
   }
 
-  addUser(){
-    this.userService.addUser(this.user);
-    this.user= new User();
+  addUser(user:User){
+    this.userService.addUser(this.newUser);
+    this.newUser= new User();
   }
 
 }

@@ -20,17 +20,23 @@ export class UserRestService {
   }
 
   addUser(user:User): Observable<any>{
-    alert("prueba");
+    alert("añadir user {{user.name}}");
     //Enviamos el nuevo usuario al servidor para que se dé de alta
+    this.mensaje.add("Usuario {user.name} añadido correctamente");
     return this.httpCli.post(this.urlApiRest,user,this.options); 
   }
 
   updateUser(user:User): Observable<any>{
+    alert("modificar user");
+    this.mensaje.add("Usuario {{user.name}} modificado correctamente");
     return this.httpCli.put(this.urlApiRest,user,this.options); 
   }
 
-  deleteUser(user:User): void{
-    this.httpCli.delete(this.urlApiRest,this.options);
-    this.mensaje.add("Usuario eliminado");
+  deleteUser(user:User): Observable<any>{
+    alert("Eliminar user");
+    this.mensaje.add("Usuario {{user.name}} eliminado correctamente");
+
+    return this.httpCli.delete(this.urlApiRest,this.options);
+
   }
 }

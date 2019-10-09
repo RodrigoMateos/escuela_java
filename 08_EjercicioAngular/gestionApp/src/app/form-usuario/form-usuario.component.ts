@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ListadoComponent } from '../listado/listado.component';
+import { User } from '../model/user';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-form-usuario',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormUsuarioComponent implements OnInit {
 
+  @Input() user: User;
+  
   constructor() { }
 
   ngOnInit() {
+   // this.user=new User();
   }
 
 }

@@ -1,15 +1,6 @@
 <div class="div-marco">
     <!--Solo se crea si hero tiene allgun valor-->
     <h1>Nuevo User</h1>
-    <div>
-        <label>Email: </label>
-        <input type="email" [(ngModel)]="user.email" placeholder="Write the email" />
-        <label>Password: </label>
-        <input type="password" [(ngModel)]="user.password" placeholder="Write the password" />
-        <label>Name: </label>
-        <input type="text" [(ngModel)]="user.name" placeholder="Write the name" />
-        <label>Age: </label>
-        <input type="number" [(ngModel)]="user.age" placeholder="Write the age" />
-    </div>
-    <button (click)="addUser()">Create</button>
+    <app-form-usuario [user]="newUser"></app-form-usuario>
+    <button (click)="addUser(newUser)">Create</button>
 </div>

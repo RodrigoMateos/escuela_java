@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
-import { RouterOutletComponent } from './router-outlet/router-outlet.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ListadoComponent } from './listado/listado.component';
@@ -16,7 +15,6 @@ import { FormUsuarioComponent } from './form-usuario/form-usuario.component';
   declarations: [
     AppComponent,
     MenuComponent,
-    RouterOutletComponent,
     MensajesComponent,
     RegistroComponent,
     ListadoComponent,
