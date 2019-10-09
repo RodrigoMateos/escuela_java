@@ -35,6 +35,7 @@ export class ListadoComponent implements OnInit {
 
   deleteUser(user: User){
     this.userService.deleteUser(user).subscribe();
+    this.userList.splice(this.userList.indexOf(user));
     this.mensaje.add(`Usuario ${user.name} eliminado correctamente`);
   }
 
