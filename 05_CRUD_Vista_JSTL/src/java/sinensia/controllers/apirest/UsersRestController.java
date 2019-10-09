@@ -45,9 +45,9 @@ public class UsersRestController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json;charset=UTF-8");
-
         try {
             List<User> usersList = userSrv.getAll();
+            setAccessControlHeader(resp);
             // Serializamos el List en un JSON
             Gson gson = new Gson();
             String textJson = gson.toJson(usersList);
@@ -63,15 +63,16 @@ public class UsersRestController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        //Recicir el JSON como parámetro de FORMulario
-        //String jsonUser = req.getParameter("json");
+        setAccessControlHeader(resp);
+
         BufferedReader bufRead = req.getReader();
         String jsonUser;
         jsonUser = bufRead.readLine();
-        /*String li
-         while (jsonUser != null) {
-             jsonUser += bu
-         }*/
+        /*
+        System.out.println(jsonUser);
+        String[] trozos = jsonUser.split(",");
+        int size = trozos.length;
+*/
         Logger.getLogger(UsersRestController.class.getName()).log(Level.SEVERE, null, jsonUser);
 
         User userObject = new Gson().fromJson(jsonUser, User.class);
@@ -94,7 +95,9 @@ public class UsersRestController extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
+            setAccessControlHeader(resp);
             String jsonUser = req.getReader().readLine();
+            String[] trozos = jsonUser.split(":",2);
             User userObject = new Gson().fromJson(jsonUser, User.class);
            userSrv.remove(userObject.getId());
             resp.getWriter().print("OK");
@@ -107,6 +110,7 @@ public class UsersRestController extends HttpServlet {
     
     @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        setAccessControlHeader(resp);
         String jsonUser = req.getReader().readLine();
         User userObject = new Gson().fromJson(jsonUser, User.class);
         try { // Debe venir ya con el id
@@ -116,6 +120,20 @@ public class UsersRestController extends HttpServlet {
         }
         resp.setContentType("application/json;charset=UTF-8");
         resp.getWriter().print(new Gson().toJson(userObject));
+    }
+
+    @Override
+    protected void doOptions(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+                
+        resp.setStatus(HttpServletResponse.SC_OK);
+        setAccessControlHeader(resp);
+    }    
+    
+    private void setAccessControlHeader(HttpServletResponse resp){
+        resp.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
+        resp.setHeader("Access-Control-Allow-Methods", "OPTIONS,HEAD,GET,POST,PUT,DELETE");
+        resp.setHeader("Access-Control-Allow-Headers", "X-PINGOTHER, Origin, X-Requested-With, Content-Type, Accept");
+        resp.setHeader("Access-Control-Max-Age", "1728000");
     }
 
 }
