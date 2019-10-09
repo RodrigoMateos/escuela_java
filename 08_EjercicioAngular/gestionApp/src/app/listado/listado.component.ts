@@ -30,16 +30,12 @@ export class ListadoComponent implements OnInit {
     this.userService.updateUser(user).subscribe((nUser)=>{
       this.newUser=nUser;
     });
-    this.mensaje.add("Usuario {{user.name}} eliminado correctamente");
-
- //   this.newUser=new User();
+    this.mensaje.add(`Usuario ${user.name} modificado correctamente`);
   }
 
   deleteUser(user: User){
     this.userService.deleteUser(user).subscribe();
-    this.mensaje.add("Usuario {{user.name}} eliminado correctamente");
-
-//    this.newUser= new User();
+    this.mensaje.add(`Usuario ${user.name} eliminado correctamente`);
   }
 
 }

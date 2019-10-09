@@ -19,7 +19,7 @@ export class RegistroComponent implements OnInit {
 
   addUser(user:User){
     this.userService.addUser(user).subscribe();
-    this.mensaje.add("Usuario {user.name} añadido correctamente");
+    this.mensaje.add(`Usuario ${user.name} añadido correctamente`);
     this.newUser= new User();
   }
 
