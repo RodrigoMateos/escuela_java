@@ -19,8 +19,8 @@ export class ListadoComponent implements OnInit {
     this.getUsers();
   }
 
-  getUsers(): Observable<User[]>{
-    return this.userList= this.userService.getUser();
+  getUsers(){
+    this.userList= this.userService.getUser();
   }
 
   updateUser(){

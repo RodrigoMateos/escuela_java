@@ -1,13 +1,11 @@
-<button (click)="addM()">Crear</button>
-<!--
 <div *ngIf="servicioMensaje.mensajes.length">
-    <h1>Mensajes</h1>
-    <div *ngFor="let m of servicioMensaje.mensajes">
-        {m}}
-    </div>
+    <h2>Mensajes: </h2>
     <button (click)="servicioMensaje.clear()">Limpiar</button>
+    <div *ngFor="let mensajes of servicioMensaje.mensajes">
+        {{mensajes}}
+    </div>
 </div>
+
 <div *ngIf="servicioMensaje.mensajes.length == 0">
-        <button (click)="addM()">Crear2</button>
+    <p>No hay mensajes</p>
 </div>
--->
