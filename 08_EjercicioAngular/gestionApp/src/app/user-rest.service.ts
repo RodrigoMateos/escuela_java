@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './model/user';
@@ -12,7 +11,7 @@ export class UserRestService {
 
   urlApiRest= "http://localhost:8084/CRUD_Vista_JSTL/api/users";
   options={headers: new HttpHeaders({'Content-Type': "application/json"})};
-
+ 
   constructor(private httpCli: HttpClient, private mensaje: MensajesService) { }
 
   getUser(): Observable<User[]>{
@@ -20,23 +19,19 @@ export class UserRestService {
   }
 
   addUser(user:User): Observable<any>{
-    alert("añadir user {{user.name}}");
     //Enviamos el nuevo usuario al servidor para que se dé de alta
-    this.mensaje.add("Usuario {user.name} añadido correctamente");
+    //this.mensaje.add("Usuario {user.name} añadido correctamente");
     return this.httpCli.post(this.urlApiRest,user,this.options); 
   }
 
   updateUser(user:User): Observable<any>{
-    alert("modificar user");
     this.mensaje.add("Usuario {{user.name}} modificado correctamente");
     return this.httpCli.put(this.urlApiRest,user,this.options); 
   }
 
   deleteUser(user:User): Observable<any>{
-    alert("Eliminar user");
     this.mensaje.add("Usuario {{user.name}} eliminado correctamente");
 
     return this.httpCli.delete(this.urlApiRest,this.options);
-
   }
 }

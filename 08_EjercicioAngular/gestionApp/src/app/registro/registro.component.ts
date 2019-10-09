@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserRestService } from '../user-rest.service';
 import { User } from '../model/user';
+import { MensajesService } from '../mensajes.service';
 
 @Component({
   selector: 'app-registro',
@@ -9,7 +10,7 @@ import { User } from '../model/user';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor(private userService: UserRestService) { }
+  constructor(private userService: UserRestService, private mensaje: MensajesService) { }
   newUser: User;
 
   ngOnInit() {
@@ -17,7 +18,8 @@ export class RegistroComponent implements OnInit {
   }
 
   addUser(user:User){
-    this.userService.addUser(this.newUser);
+    this.userService.addUser(user).subscribe();
+    this.mensaje.add("Usuario {user.name} añadido correctamente");
     this.newUser= new User();
   }
 
