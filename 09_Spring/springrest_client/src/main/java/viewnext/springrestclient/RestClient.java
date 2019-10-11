@@ -29,6 +29,16 @@ public class RestClient {
 		this.status = responseEntity.getStatusCode();
 		return responseEntity.getBody();
 	}
-	
+
+	public String get(String uri, String jsonAEnviar) {
+		HttpEntity<String> requestEntitu = new HttpEntity<String>(jsonAEnviar, headers);
+		ResponseEntity<String> responseEntity = 
+				rest.exchange(URL_SRV_87 + uri, 
+						HttpMethod.POST, 
+						requestEntitu,
+						String.class);
+		this.status = responseEntity.getStatusCode();
+		return responseEntity.getBody();
+	}
 	
 }

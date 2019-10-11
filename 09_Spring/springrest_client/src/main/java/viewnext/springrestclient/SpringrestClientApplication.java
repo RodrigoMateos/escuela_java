@@ -14,8 +14,13 @@ public class SpringrestClientApplication {
 		SpringApplication.run(SpringrestClientApplication.class, args);
 
 		System.out.println(">> Recogiendo usuarios");
-		
+		RestClient clientRest = new RestClient();
+		String jsonUsers = clientRest.get("/users");
 		System.out.println(">> Usuarios recogidos");
+		String usuarioAEnviar ="{\"id\":\"1\",\"email\":\"prueba@prueba\",\"name\":\"prueba\",\"age\":\"45\"}";
+
+		String jsonUserCreado = clientRest.
+		System.out.println(">> Usuario creado: \n "+jsonUserCreado);
 	}
 	/*public List<User> getTodosUsuarios() {
 		
