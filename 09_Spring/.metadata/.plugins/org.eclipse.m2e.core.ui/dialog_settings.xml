@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\alumno\Desktop\ESCUELA_JAVA\escuela_java_mio\09_Spring\demo_spring_users"/>
+			<item value="C:\Users\alumno\Desktop\ESCUELA_JAVA\escuela_java_mio\10_Spring\com.sinensia.springusers"/>
 			<item value="C:\Users\alumno\Desktop\ESCUELA_JAVA\escuela_java_profesor\08_Spring\demo_spring_users"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -12,5 +14,9 @@
 			<item value="[groupId].[artifactId]-[version]"/>
 			<item value="[name]"/>
 		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
 	</section>
 </section>
