@@ -19,7 +19,7 @@ public class SpringrestClientApplication {
 		System.out.println(">> Usuarios recogidos");
 		String usuarioAEnviar ="{\"id\":\"1\",\"email\":\"prueba@prueba\",\"name\":\"prueba\",\"age\":\"45\"}";
 
-		String jsonUserCreado = clientRest.
+		String jsonUserCreado = clientRest.post("/users", usuarioAEnviar);
 		System.out.println(">> Usuario creado: \n "+jsonUserCreado);
 	}
 	/*public List<User> getTodosUsuarios() {

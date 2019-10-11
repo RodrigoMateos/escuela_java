@@ -30,7 +30,7 @@ public class RestClient {
 		return responseEntity.getBody();
 	}
 
-	public String get(String uri, String jsonAEnviar) {
+	public String post(String uri, String jsonAEnviar) {
 		HttpEntity<String> requestEntitu = new HttpEntity<String>(jsonAEnviar, headers);
 		ResponseEntity<String> responseEntity = 
 				rest.exchange(URL_SRV_87 + uri, 
